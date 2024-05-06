@@ -1,0 +1,21 @@
+"Напишите программу с классом Math. При
+инициализации атрибутов нет. Реализовать методы addition,
+subtraction, multiplication и division. При передаче в методы
+двух числовых параметров нужно производить с
+параметрами соответствующие действия и печатать ответ"
+class Math():
+    def __init__(self):
+        pass
+    def add(self,a,b):
+        return a+b
+    def sub(self,a,b):
+        return a-b
+    def mul(self,a,b):
+        return a*b
+    def div(self,a,b):
+        return a/b
+math=Math()
+print(math.add(int(input()),int(input())))
+print(math.sub(int(input()),int(input())))
+print(math.mul(int(input()),int(input())))
+print(math.div(int(input()),int(input())))
