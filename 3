@@ -1,0 +1,45 @@
+Программа с классом Car. При инициализации объекта
+ему должны задаваться атрибуты color, type и year.
+Реализовать пять методов. Запуск автомобиля – выводит
+строку «Автомобиль заведён». Отключение автомобиля –
+выводит строку «Автомобиль заглушен». Методы для
+присвоения автомобилю года выпуска, типа и цвета.
+
+class Car:
+    def __init__(self, color, car_type, year):
+        self.color = color
+        self.type = car_type
+        self.year = year
+        self.is_running = False
+
+    def go_car(self):
+        if not self.is_running:
+            self.is_running = True
+            return 'Автомобиль заведен'
+        return 'Автомобиль уже заведен со вчерашнего вчера'
+
+    def stop_car(self):
+        if self.is_running:
+            self.is_running = False
+            return 'Автомобиль заглушен'
+        return "Автомобиль уже заглушен"
+
+    def set_year(self, year):
+        self.year = year
+        return self.year
+
+
+    def set_type(self, car_type):
+        self.type = car_type
+        return self.type
+
+    def set_color(self, color):
+        self.color = color
+        return self.color
+
+car = Car("Черного цвета", "Рено Логан", 2000)
+print(car.go_car())
+print(car.set_type("Рено Логан"))
+print(car.set_color("Черного цвета"))
+print(car.set_year(2000))
+print(car.stop_car())
