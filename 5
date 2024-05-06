@@ -1,0 +1,30 @@
+Разработать класс SuperStr, который наследует
+функциональность стандартного типа str и содержит два
+новых метода:
+● метод is_repeatance(s), который принимает некоторую
+строку и возвращает True или False в зависимости от того,
+может ли текущая строка быть получена целым
+количеством повторов строки s. Считать, что пустая
+строка не содержит повторов
+● метод is_palindrom(), который возвращает True или False в
+зависимости от того, является ли строка палиндромом вне
+зависимости от регистра. Пустую строку считать
+палиндромом
+
+class SuperStr(str):
+    def is_repeatance(self, s):
+        if len(self) % len(s) == 0:
+            return s * (len(self) // len(s)) == self
+        else:
+            return False
+
+    def is_palindrom(self):
+        s = self.lower()
+        return s == s[::-1]
+
+s = SuperStr("ababab")
+s2 = SuperStr("aba")
+print(s.is_repeatance("ab"))
+print(s.is_repeatance("ba"))
+print(s2.is_palindrom())
+print(s.is_palindrom())
